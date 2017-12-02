@@ -4,13 +4,14 @@
   "description": "",
   "main": "snazzy.js",
   "scripts": {
-    "test": "mocha utils/**/*.test.js",
+    "test": "mocha lib/**/*.test.js",
     "test-watch": "nodemon --exec 'npm test'"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "lodash": "^4.17.4",
+    "moment": "^2.19.2",
     "request": "^2.83.0",
     "request-promise": "^4.2.2"
   },
