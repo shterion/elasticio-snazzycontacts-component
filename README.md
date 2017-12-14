@@ -62,7 +62,7 @@ Delete organization action (``deleteOrganization.js``) deletes an organization i
 
 ##### Update person
 
-Update person action (``updatePerson.js``) updates a specific person in [Snazzy Contacts](https://snazzycontacts.com). The function accepts as required parameters ``rowid`` and ``name`` of the person which you want to update.
+Update person action (``updatePerson.js``) updates a specific person in [Snazzy Contacts](https://snazzycontacts.com). The function accepts as required parameter ``rowid`` of the person and respectively the values of the properties which you want to update.
 
 ##### Update person's organizations
 Update person's organizations action (```updatePersonsOrganization.js```) assign one person to one or more organizations. This means that one person could be  assigned to as many organizations as you want. The function accepts as required parameters ``same_contactperson``, ``for_rowid``, ````name```` und ``firstname``.
@@ -77,7 +77,7 @@ Update person's organizations action (```updatePersonsOrganization.js```) assign
 
 ##### Update organization
 
-Update organization action (``updateOrganization.js``) updates a specific organization in [Snazzy Contacts](https://snazzycontacts.com). The function accepts as required parameters ``rowid`` and ``name`` of the organization which you want to update.
+Update organization action (``updateOrganization.js``) updates a specific organization in [Snazzy Contacts](https://snazzycontacts.com). The function accepts as required parameter ``rowid`` of the organization  and respectively the values of the properties which you want to update.
 
 ***
 
