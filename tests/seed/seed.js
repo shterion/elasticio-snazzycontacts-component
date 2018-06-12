@@ -29,8 +29,8 @@ const organizations = [{
 ];
 
 const persons = [{
-    name: 'Test 1',
-    firstname: 'Test 1'
+    name: 'Brown',
+    firstname: 'Adam'
   },
   {
     name: 'Doe',
