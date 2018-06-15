@@ -8,8 +8,8 @@
     "test-watch": "nodemon --exec 'npm test'",
     "test": "jest --watch"
   },
-  "author": "",
-  "license": "ISC",
+  "author": "Wice GmbH",
+  "license": "Apache 2.0",
   "dependencies": {
     "jest": "^23.1.0",
     "jsonata": "^1.5.3",
