@@ -1,8 +1,8 @@
 # FAQ
 
-## In this section you will find the problems which we faced during the component development
+## In this section you will find the problems which we faced during the component's development
 
-##### 1. Why does the component save only the first object from the incoming array of objects?
+#### 1. Why does the component save only the first object from the incoming array of objects?
 Imagine that we have the following scenario, which should get all persons from [Snazzy Contacts](https://snazzycontacts.com) and then transfer them in [Wice CRM](https://wice.de/). The flow should looks like this:
 
 [Snazzy Contacts Component](https://snazzycontacts.com) :arrow_right: [Splitter Component](https://github.com/elasticio/splitter-component) :arrow_right: [Wice Component](https://wice.de/)
@@ -22,7 +22,7 @@ First we choose the *trigger* **Get persons** from [Snazzy Contacts Component](h
 
  **Expected behavior:** the flow should run every 3 minutes  
  **Actual behavior:**  the flow runs every 20 minutes  
- **Solution:** after executing the functions, we have to call the [elastic.io event](https://support.elastic.io/support/solutions/articles/14000059642-emitend-event) ```emitEnd()``` which announces the end of a program so the next stage can begin. :tada:
+ **Solution:** after executing the functions, we have to call the [elastic.io event](https://support.elastic.io/support/solutions/articles/14000059642-emitend-event) ```emitEnd()``` which announces the end of a program, so the next stage can begin. :tada:
 
 ---
 
@@ -88,7 +88,7 @@ While executing your flow you could see this error. In the logs you could find t
 That means that the component is running out of memory. The problem mostly occurs when you deal with a big amount of data. In this case you should increase the memory of the component.
 
 **Solution:**
-To increase increase the memory you must have access to your component repository on [elastic.io](https://www.elastic.io/) platform.   
+To increase the memory you must have an access to your component repository on [elastic.io](https://www.elastic.io/) platform.   
 1. Navigate to the repository page and click on the link situated under ***Environment variables***
 2. You will be redirected to another page where you will be able to set ***Environment variables***
 3. Click on ***"+Create a new variable"*** and give the name **"EIO_REQUIRED_RAM_MB"** and value **512** and save it. This is the memory of the component.
