@@ -4,7 +4,7 @@ const cfg = config.getEnvironment();
 const { getToken, getCookie, createSession } = require('./lib/utils/snazzy');
 
 async function verifyCredentials(credentials, cb) {
-  console.log('Credentials passed for verification %j', credentials)
+  console.log('Credentials passed for verification %j', credentials);
 
   try {
     const cfg = {
@@ -17,30 +17,24 @@ async function verifyCredentials(credentials, cb) {
     const cookie = await getCookie(token, cfg);
     const session = await createSession(cfg);
 
-    cb(null, { verified: true });
+    if (session) {
+      cb(null, { verified: true });
+      // console.log('Credentials verified successfully');
+      return true;
+    }
+    throw new Error('Error in validating credentials!');
+    return false;
   } catch (e) {
     console.log(`ERROR: ${e}`);
     throw new Error(e);
   }
 
-  // if (!credentials.email) {
-  //   console.log('Invalid email');
-  //   return cb(null, {
-  //     verified: false
-  //   });
-  // }
-  //
-  // if (!credentials.apikey) {
-  //   console.log('Invalid API key');
-  //   return cb(null, { verified: false });
-  // }
-  //
-  // console.log('Credentials verified successfully');
-  //
-  // cb(null, { verified: true });
 }
 verifyCredentials(cfg, () => {
   console.log('Credentials verified successfully');
+}).catch((e) => {
+  console.log(`ERROR: ${e}`);
+  throw new Error(e);
 });
 
-module.exports = {verifyCredentials};
+module.exports = { verifyCredentials };
