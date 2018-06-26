@@ -18,12 +18,12 @@ Once the activation is done you have an access to **API Key** which is required 
 ## Actions and triggers
 The connector supports the following **actions** and **triggers**:
 #### Triggers:
-  - Get persons (```getPersonsPolling.js```)
-  - Get organizations (```getOrganizationsPolling.js```)
+  - Get persons (```getPersons.js```)
+  - Get organizations (```getOrganizations.js```)
 
 #### Actions:
   - Create person (```createPerson.js```)
-  - Create organization(```createOrganization.js```)
+  - Create organization (```createOrganization.js```)
   - Delete person (```deletePerson.js```)
   - Delete organization (```deleteOrganization.js```)
   - Update person (```updatePerson.js```)
@@ -32,15 +32,16 @@ The connector supports the following **actions** and **triggers**:
 
 > **NOTE:** As mentioned before, to perform an action or a trigger you have to be a registered [Snazzy Contacts](https://snazzycontacts.com) user and you have to pass your **API Key** (in [Snazzy Contacts](https://snazzycontacts.com) named *Data Sharing Key*) when you send a request.
 
-In each trigger or action, before sending a request we create a session in [Snazzy Contacts](https://snazzycontacts.com) via calling a function ```createSession()``` from ```snazzy.js``` file, which is located in directory **actions**. This function creates a session and as a second parameter accepts a callback function ```continueOnSuccess()``` which calls the certain trigger or the action.
+In each trigger and action, before sending a request we create a session in [Snazzy Contacts](https://snazzycontacts.com) via calling a function ```createSession()``` from ```snazzy.js``` file, which is located in directory **utils**. This function returns a cookie which is used when we send a request to
+[Snazzy Contacts](https://snazzycontacts.com).
 
 ##### Get persons
 
-Get persons trigger (```getPersonsPolling.js```) performs a request which fetch all persons saved by a user in [Snazzy Contacts](https://snazzycontacts.com). The response consist of an **array of objects** with all persons and their attributes.
+Get persons trigger (```getPersons.js```) performs a request which fetch all persons saved by a user in [Snazzy Contacts](https://snazzycontacts.com). The response consist of an **array of objects** with all persons and their attributes.
 
 ##### Get organizations
 
-Get organizations trigger (```getOrganizationsPolling.js```) performs a request which fetch all organizations saved by a user in [Snazzy Contacts](https://snazzycontacts.com). The response consist of an **array of objects** with all organizations and their attributes.
+Get organizations trigger (```getOrganizations.js```) performs a request which fetch all organizations saved by a user in [Snazzy Contacts](https://snazzycontacts.com). The response consist of an **array of objects** with all organizations and their attributes.
 
 ##### Create person
 
